@@ -90,7 +90,7 @@ namespace SecretSanta
             };
 
             var body = $"{p.Name}'s assignment is: {p.Selected.Name} <br><br>{p.Selected.Description}";
-            var message=new MailMessage("SecretSantaThrowAway1234@gmail.com", p.Email, $"Secret Santa Assignment For {p.Name}", body);
+            var message=new MailMessage(emailLogin, p.Email, $"Secret Santa Assignment For {p.Name}", body);
             message.IsBodyHtml = true;
             client.Send(message);
         }
